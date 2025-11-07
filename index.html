@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>TodoApp</title>
+  </head>
+  <body>
+    <div class="bg-stone-800 text-gray-300 min-h-screen px-24 pt-10">
+      <form>
+        <input
+          type="text"
+          name="task"
+          id="input"
+          class="border px-4 py-2 rounded-sm"
+          placeholder="Enter the task"
+        />
+        <button id="btn" class="bg-lime-500 text-black text-lg px-6 py-1 rounded">Submit</button>
+      </form>
+
+      <ul id="taskList" class="w-[400px] mt-6">
+        Task List
+      </ul>
+    </div>
+    <script src="./Script.js"></script>
+  </body>
+</html>
