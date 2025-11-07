@@ -38,15 +38,15 @@ Example:
 
 ## 🧠 How It Works
 
-Enter a task in the input field.
+- Enter a task in the input field.
 
-Click Submit to add it to the list.
+- Click Submit to add it to the list.
 
-Click Update to edit the task.
+- Click Update to edit the task.
 
-Click Delete to remove it.
+- Click Delete to remove it.
 
-All interactions happen dynamically without reloading the page.
+### All interactions happen dynamically without reloading the page.
 
 1. **Clone this repository:**
    ```bash
