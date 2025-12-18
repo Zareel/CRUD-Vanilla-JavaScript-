@@ -3,26 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- TAILWIND CONFIG SHOULD COME BEFORE THE LOADER -->
+    <script>
+      tailwind = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+              myFont: "Orbitron",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- TAILWIND CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>TodoApp</title>
+
+    <title>Digital Clock</title>
   </head>
-  <body>
-    <div class="bg-stone-800 text-gray-300 min-h-screen px-24 pt-10">
+
+  <body class="bg-stone-950 text-gray-300">
+    <div class="flex flex-col items-center justify-center pt-20 pb-10">
       <form>
         <input
-          type="text"
-          name="task"
           id="input"
-          class="border px-4 py-2 rounded-sm"
-          placeholder="Enter the task"
+          type="text"
+          class="border-none outline-none bg-gray-700 px-6 py-2 rounded-md w-96"
+          placeholder="Enter the task..."
         />
-        <button id="btn" class="bg-lime-500 text-black text-lg px-6 py-1 rounded">Submit</button>
+        <button id="btn" class="bg-sky-800 px-6 py-2 rounded-md">Submit</button>
       </form>
-
-      <ul id="taskList" class="w-[400px] mt-6">
-        Task List
-      </ul>
+      <div class="w-96 mt-12">
+        <h1 class="text-2xl font-bold text-blue-400 pb-4">Task List</h1>
+        <ul id="ul"></ul>
+      </div>
     </div>
-    <script src="./Script.js"></script>
+
+    <script src="./script.js"></script>
   </body>
 </html>

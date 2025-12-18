@@ -1,107 +1,77 @@
-//   const input = document.querySelector("#input");
-//   const btn = document.querySelector("#btn");
-//   const taskList = document.querySelector("#taskList");
-
-//   // addTask
-//   btn.addEventListener("click", (e) => {
-//     e.preventDefault() //prevent from default
-
-//     const task = input.value.trim();
-//     if (task === "") {
-//       alert("Please enter a task");
-//       return;
-//     }
-
-//     // create list item
-//     const li = document.createElement("li");
-//     li.textContent = task;
-
-//     // add delete button
-//     const delButton = document.createElement("button");
-//     delButton.textContent = "delete";
-//     delButton.classList.add("ml-10");
-//     li.appendChild(delButton);
-
-//     // append to list
-//     taskList.appendChild(li);
-
-//     // clear input
-//     input.value = "";
-
-//     // delete on click
-//     delButton.addEventListener("click", () => {
-//       li.remove();
-
-//     });
-//   });
-
 const input = document.querySelector("#input");
 const btn = document.querySelector("#btn");
-const taskList = document.querySelector("#taskList");
+const ul = document.querySelector("#ul");
 
 btn.addEventListener("click", (e) => {
-  e.preventDefault(); // Prevent form refresh
+  e.preventDefault();
 
   const task = input.value.trim();
   if (task === "") {
-    alert("Please enter a task");
+    alert("Pls enter a task..");
     return;
   }
 
-  // Create list item
+  //todo create a list item
   const li = document.createElement("li");
   li.classList.add(
+    "bg-stone-900",
+    "py-2",
+    "px-4",
+    "rounded-md",
+    "mb-4",
     "flex",
-    "justify-between",
-    "items-center",
-    "bg-stone-700",
-    "text-gray-200",
-    "p-2",
-    "rounded",
-    "my-1"
+    "justify-between"
   );
 
-  // Task text span
-  const taskText = document.createElement("span");
-  taskText.textContent = task;
+  //todo create span
+  const span = document.createElement("span");
+  span.textContent = task;
 
-  // Create delete button
-  const delButton = document.createElement("button");
-  delButton.textContent = "Delete";
-  delButton.classList.add("text-red-400", "hover:text-red-600", "font-bold");
+  //todo create button
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.classList.add("bg-red-700", "px-2", "rounded-md", "text-xs");
 
-  //   create update button
-  const updateButton = document.createElement("button");
-  updateButton.textContent = "Update";
-  updateButton.classList.add(
-    "text-yellow-500",
-    "hover:text-yellow-400",
-    "font-bold"
+  //todo create edit button
+  const editButton = document.createElement("button");
+  editButton.textContent = "Edit";
+  editButton.classList.add(
+    "bg-yellow-500",
+    "px-2",
+    "rounded-md",
+    "text-xs",
+    "text-black"
   );
 
-  // Add button inside li
-  li.appendChild(taskText);
-  li.appendChild(delButton);
-  li.appendChild(updateButton);
-  
+  // div for design
+  const div = document.createElement("div");
+  div.classList.add("flex", "gap-2");
 
-  // Append li to task list
-  taskList.appendChild(li);
+  //todo append child elements
+  //* append li into ul
+  ul.appendChild(li);
+  // append span to li
+  li.appendChild(span);
+  // append div to li
+  li.appendChild(div);
+  //* append updateButton to li
+  div.appendChild(editButton);
+  //* appen deleteButton to li
+  div.appendChild(deleteButton);
 
-  // Clear input
+  //todo clear input field
   input.value = "";
 
-  // Delete task when clicked
-  delButton.addEventListener("click", () => {
+  //todo delete functionality
+  deleteButton.addEventListener("click", () => {
     li.remove();
   });
 
-  //   update task
-  updateButton.addEventListener("click", () => {
-    const newTask = prompt("Edit your task: ", taskText.textContent);
-    if (newTask !== null && newTask.trim() !== "") {
-      taskText.textContent = newTask.trim();
+  //todo edit functionality
+  editButton.addEventListener("click", () => {
+    const newTask = prompt("Edit your task: ", span.textContent);
+    if (newTask !== null) {
+      span.textContent = newTask;
     }
   });
 });
-

@@ -26,6 +26,8 @@ This app allows you to **add**, **update**, and **delete** tasks effortlessly â€
 
 ---
 ## ðŸ“¸ Preview
+
+![ss](./image.png)
 ![ss](./ss.png)
 
 
